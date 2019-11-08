@@ -129,7 +129,7 @@ classifier.add(Dense(1, activation='sigmoid', kernel_initializer='random_normal'
 
 classifier.compile(optimizer ='adam',loss='binary_crossentropy', metrics =['accuracy'])
 
-classifier.fit(X_train,y_train, batch_size=10, epochs=3)
+classifier.fit(X_train,y_train, batch_size=10, epochs=10)
 
 model = classifier.evaluate(X_train, y_train)
 
