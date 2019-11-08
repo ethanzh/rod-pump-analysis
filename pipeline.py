@@ -15,6 +15,7 @@ from os import listdir
 from os.path import isfile, join
 import matplotlib.pyplot as plt
 import logging
+import datetime
 
 
 # In[ ]:
@@ -152,7 +153,9 @@ logging.info(cm)
 
 
 logging.info("Saving model")
-classifier.save("model")
+curr_time = datetime.datetime()
+model_name = f"{curr_time}.h5"
+classifier.save(model_name)
 
 
 # In[ ]:
