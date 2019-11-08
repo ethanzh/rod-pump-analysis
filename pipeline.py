@@ -44,7 +44,7 @@ logging.info(file_names)
 plt.figure(figsize=(20,10))
 df_list = []
 print("Begin parsing all files individually")
-for file in file_names[0:2]:
+for file in file_names:
     logging.info(f"Begin parsing {file}")
     df = pd.read_csv(f'{DIR_NAME}/{file}')
     df['Name'] = file.replace('.csv', '')
@@ -126,7 +126,7 @@ classifier.add(Dense(1, activation='sigmoid', kernel_initializer='random_normal'
 
 classifier.compile(optimizer ='adam',loss='binary_crossentropy', metrics =['accuracy'])
 
-classifier.fit(X_train,y_train, batch_size=10, epochs=3)
+classifier.fit(X_train,y_train, batch_size=10, epochs=100)
 
 model = classifier.evaluate(X_train, y_train)
 
