@@ -153,7 +153,7 @@ logging.info(cm)
 
 
 logging.info("Saving model")
-curr_time = datetime.datetime()
+curr_time = datetime.datetime.now()
 model_name = f"{curr_time}.h5"
 classifier.save(model_name)
 
