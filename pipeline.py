@@ -43,9 +43,11 @@ logging.info(file_names)
 # then concat to create master dataframe
 plt.figure(figsize=(20,10))
 df_list = []
+i = 1
+names_length = len(file_names)
 print("Begin parsing all files individually")
 for file in file_names:
-    logging.info(f"Begin parsing {file}")
+    logging.info(f"[{i}/{names_length}] {file}")
     df = pd.read_csv(f'{DIR_NAME}/{file}')
     df['Name'] = file.replace('.csv', '')
 
@@ -66,8 +68,9 @@ for file in file_names:
     df["failing"] = failing
 
     df_list.append(df)
+    i += 1
     
-    logging.info(f"Finished {file}")
+    logging.info(f"[{i}/{names_length}] {file}")
     
 df = pd.concat(df_list)
 
