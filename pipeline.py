@@ -44,7 +44,7 @@ logging.info(file_names)
 plt.figure(figsize=(20,10))
 df_list = []
 print("Begin parsing all files individually")
-for file in file_names[0:2]:
+for file in file_names:
     logging.info(f"Begin parsing {file}")
     df = pd.read_csv(f'{DIR_NAME}/{file}')
     df['Name'] = file.replace('.csv', '')
