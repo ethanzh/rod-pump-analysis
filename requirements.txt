@@ -4,3 +4,4 @@ scikit-learn
 jupyterlab
 keras
 tensorflow
+pandas
