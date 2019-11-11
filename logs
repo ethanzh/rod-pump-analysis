@@ -17,3 +17,4 @@ Use tf.where in 2.0, which has the same broadcast rule as np.where
 2019-11-10 17:23:18 WARNING  From /home/ethanzh/Code/oil_model/venv/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:422: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
 
 2019-11-10 18:52:58 INFO     Saving model
+2019-11-10 21:58:56 INFO     Saving model
