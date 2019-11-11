@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[4]:
+# In[2]:
 
 
 import pandas as pd
@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 import datetime
 
 
-# In[5]:
+# In[3]:
 
 
 file_name = "logs"
@@ -25,7 +25,7 @@ logging.basicConfig(
     datefmt='%Y-%m-%d %H:%M:%S')
 
 
-# In[7]:
+# In[3]:
 
 
 # we only want to do this if there isn't a pickle present
@@ -73,7 +73,7 @@ else:
     df = pd.read_pickle("./df.pkl")
 
 
-# In[ ]:
+# In[4]:
 
 
 # create copy, remove misc. features from X
@@ -129,7 +129,7 @@ classifier.add(Dense(1, activation='sigmoid', kernel_initializer='random_normal'
 
 classifier.compile(optimizer ='adam',loss='binary_crossentropy', metrics =['accuracy'])
 
-classifier.fit(X_train, y_train, batch_size=32, epochs=1000)
+classifier.fit(X_train, y_train, batch_size=32, epochs=100)
 
 eval_model = classifier.evaluate(X_train, y_train)
 eval_model
@@ -138,8 +138,8 @@ eval_model
 # In[ ]:
 
 
-y_pred=classifier.predict(X_test)
-y_pred =(y_pred>0.5)
+y_pred = classifier.predict(X_test)
+y_pred = y_pred > 0.5
 
 
 # In[ ]:
@@ -147,14 +147,21 @@ y_pred =(y_pred>0.5)
 
 from sklearn.metrics import confusion_matrix
 cm = confusion_matrix(y_test, y_pred)
-print(cm)
+logging.info(cm)
+
+
+# In[4]:
+
+
+import time
+logging.info("Saving model")
+curr_time = int(time.time())
+model_name = f"{curr_time}.h5"
+classifier.save(f"./models/{model_name}")
 
 
 # In[ ]:
 
 
-logging.info("Saving model")
-curr_time = datetime.datetime.now()
-model_name = f"{curr_time}.h5"
-classifier.save(model_name)
+
 

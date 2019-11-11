@@ -18,3 +18,11 @@ Use tf.where in 2.0, which has the same broadcast rule as np.where
 
 2019-11-10 18:52:58 INFO     Saving model
 2019-11-10 21:58:56 INFO     Saving model
+2019-11-10 20:03:03 WARNING  From /home/ethanzh/Code/oil_model/venv/lib/python3.6/site-packages/tensorflow/python/ops/nn_impl.py:180: add_dispatch_support.<locals>.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+2019-11-10 20:03:04 WARNING  From /home/ethanzh/Code/oil_model/venv/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:422: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+
+2019-11-10 20:12:49 INFO     [[76033     0]
+ [   24     0]]
+2019-11-10 20:12:49 INFO     Saving model
