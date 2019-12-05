@@ -1,0 +1,8 @@
+pandas
+matplotlib
+scikit-learn
+jupyterlab
+keras
+tensorflow
+pandas
+ipywidgets
